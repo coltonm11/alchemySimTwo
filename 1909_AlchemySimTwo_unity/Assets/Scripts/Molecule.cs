@@ -8,10 +8,17 @@ public class Molecule : ScriptableObject
     public int electrons;
     public AtomDictionary atomDictionary;
     public int quantity;
-    string name;
+    string chemicalNotation;
+
+    private void Awake()
+    {
+        atomDictionary = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<AtomDictionary>();
+        chemicalNotation = "ass";
+    }
 
     public void AddAtom(Atom atom)
     {
+        Debug.Log("MOLECULE: Started AddAtom();");
         if (moleculeAtoms.ContainsKey(atom))
         {
             moleculeAtoms[atom] += 1;
@@ -20,23 +27,27 @@ public class Molecule : ScriptableObject
         {
             moleculeAtoms.Add(atom, 1);
         }
-
+        Debug.Log("MOLECULE: just added " + atom);
         electrons += moleculeAtoms[atom] * atom.GetElectrons();
-        Debug.Log(moleculeAtoms);
-        Debug.Log(electrons);
+        //Debug.Log(moleculeAtoms);
+        //Debug.Log(electrons);
+        SetName();
     }
 
     public void SetName()
     {
+        Debug.Log("MOLECULE: SetName() is called");
         foreach(KeyValuePair<Atom, int> atom in moleculeAtoms)
         {
-            name = name + atomDictionary.ClassToString(atom.Key);
+            Debug.Log("MOL: atom.Key is " + atom.Key);
+            //AtomType type = atom.Key.getType();
+            //chemicalNotation = chemicalNotation + atomDictionary.TypeToString(type);
         }
     }
 
     public string GetName()
     {
-        return name;
+        return chemicalNotation;
     }
 
 }
