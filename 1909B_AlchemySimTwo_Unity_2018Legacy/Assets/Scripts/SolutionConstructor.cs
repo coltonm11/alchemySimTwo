@@ -35,16 +35,12 @@ public class SolutionConstructor : MonoBehaviour
         {
             for (int x = 0; x < quantityToAdd[i]; x++)
             {
-
-                print("THE FOR LOOP: i / x = " + i + " " + x);
-                print(" atomsToAdd.Length / quantityToAdd[i] = " + atomsToAdd.Length + " " + quantityToAdd[i]);
-                print("SOLUTION CONSTRUCTOR: Created one " + atomDictionary.TypeToClass(atomsToAdd[i]));
                 Atom atom = atomDictionary.TypeToClass(atomsToAdd[i]);
                 newMolecule.AddAtom(atom);
-                print("SOLUTION CONSTRUCTOR: Added it to newMolecule");
             }
         }
-        
+
+        newMolecule.SetName();
 
         solution.AddMolecule(newMolecule);
         print("SOLUTION CONSTRUCTOR: called solution.AddMolecule(newMolecule)");

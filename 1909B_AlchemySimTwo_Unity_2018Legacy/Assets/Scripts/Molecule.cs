@@ -30,14 +30,14 @@ public class Molecule : ScriptableObject
         electrons += moleculeAtoms[atom] * atom.GetElectrons();
         //Debug.Log(moleculeAtoms);
         //Debug.Log(electrons);
-        SetName(atom);
     }
 
-    public void SetName(Atom newAtom)
+    public void SetName()
     {
-        //Debug.Log("MOL: atom.Key is " + atom.Key);
-        AtomType type = newAtom.getType();
-        chemicalNotation = chemicalNotation + atomDictionary.TypeToString(type);
+        foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
+        {
+            chemicalNotation += entry.Value + atomDictionary.TypeToString(entry.Key.getType());
+        }
         Debug.Log("MOLECULE: name is " + chemicalNotation);
     }
 
