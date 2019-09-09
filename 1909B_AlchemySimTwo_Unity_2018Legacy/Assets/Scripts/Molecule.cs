@@ -17,7 +17,7 @@ public class Molecule : ScriptableObject
 
     public void AddAtom(Atom atom)
     {
-        Debug.Log("MOLECULE: Started AddAtom();");
+        //Debug.Log("MOLECULE: Started AddAtom();");
         if (moleculeAtoms.ContainsKey(atom))
         {
             moleculeAtoms[atom] += 1;
@@ -26,7 +26,7 @@ public class Molecule : ScriptableObject
         {
             moleculeAtoms.Add(atom, 1);
         }
-        Debug.Log("MOLECULE: just added " + atom);
+        //Debug.Log("MOLECULE: just added " + atom);
         electrons += moleculeAtoms[atom] * atom.GetElectrons();
         //Debug.Log(moleculeAtoms);
         //Debug.Log(electrons);

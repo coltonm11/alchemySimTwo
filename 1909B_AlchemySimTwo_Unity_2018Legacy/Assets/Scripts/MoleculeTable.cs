@@ -8,7 +8,12 @@ public class MoleculeTable : MonoBehaviour
 
     public void SetMol(string name, Molecule mol)
     {
-        moleculicon.Add(name, mol);
+        if (!moleculicon.ContainsKey(name))
+        {
+            moleculicon.Add(name, mol);
+            print("MOLECULICON: " + moleculicon);
+        }
+
     }
 
     public Molecule GetMol (string name)
