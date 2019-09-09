@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Card (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -254,6 +259,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &37852279 stripped
@@ -353,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory Card (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
@@ -484,6 +503,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &223314284 stripped
@@ -571,6 +599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory Card (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
@@ -702,6 +735,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &465828371 stripped
@@ -871,6 +913,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Card (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1001,6 +1048,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &777587926 stripped
@@ -1020,6 +1076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory Card (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
@@ -1151,6 +1212,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &824316844 stripped
@@ -1176,7 +1246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &863975574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,6 +1447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory Card (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1507,6 +1582,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &1300257320 stripped
@@ -1569,6 +1653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory Card (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357188827632531513, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3357188827632531518, guid: efd9d580b1af3b647aa41009ffadd478,
         type: 3}
@@ -1700,6 +1789,15 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
 --- !u!224 &1941362167 stripped
@@ -1825,5 +1923,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3357188827685823108, guid: efd9d580b1af3b647aa41009ffadd478,
+        type: 3}
+      propertyPath: atomDictionary
+      value: 
+      objectReference: {fileID: 1557087698}
+    - target: {fileID: 1035199704, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 727689419}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd9d580b1af3b647aa41009ffadd478, type: 3}
