@@ -33,9 +33,16 @@ public class InventoryCard : MonoBehaviour
         Solution targetSolution = gob.GetComponent<Solution>();
         foreach (KeyValuePair<string, int> entry in solution.solutionMolecules)
         {
-            targetSolution.solutionMolecules.Add(entry.Key, entry.Value);
+            if (targetSolution.solutionMolecules.ContainsKey(entry.Key))
+            {
+                targetSolution.solutionMolecules[entry.Key] += 1;
+            }
+            if (!targetSolution.solutionMolecules.ContainsKey(entry.Key))
+            {
+                targetSolution.solutionMolecules.Add(entry.Key, entry.Value);
+            }  
         }
-        print("TARGET SOLUTION SAYS: " + targetSolution.solutionMolecules);
+        print("TARGET SOLUTION SAYS: " + targetSolution.solutionMolecules.Count);
     }
 
 }

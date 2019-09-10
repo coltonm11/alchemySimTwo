@@ -1021,8 +1021,8 @@ GameObject:
   - component: {fileID: 727689420}
   - component: {fileID: 727689421}
   m_Layer: 5
-  m_Name: Potion
-  m_TagString: Untagged
+  m_Name: Laboratory
+  m_TagString: Laboratory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
