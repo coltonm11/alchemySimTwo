@@ -36,11 +36,6 @@ public class AtomDictionary : MonoBehaviour
         classToStringDictionary.Add(ScriptableObject.CreateInstance<AtomF>(), "F");
         classToStringDictionary.Add(ScriptableObject.CreateInstance<AtomG>(), "G");
         classToStringDictionary.Add(ScriptableObject.CreateInstance<AtomH>(), "H");
-
-        foreach(KeyValuePair<Atom, string> entry in classToStringDictionary)
-        {
-            print(entry);
-        }
     }
 
     public Atom TypeToClass(AtomType type)

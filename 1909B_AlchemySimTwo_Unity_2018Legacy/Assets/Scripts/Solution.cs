@@ -21,7 +21,7 @@ public class Solution : MonoBehaviour
         if (!solutionMolecules.ContainsKey(molecule.name))
         {
             solutionMolecules.Add(molecule.GetName(), 1);
-            molTable.SetMol(molecule.name, molecule);
+            molTable.SetMol(molecule.GetName(), molecule);
         }
         //print(solutionMolecules);
     }
