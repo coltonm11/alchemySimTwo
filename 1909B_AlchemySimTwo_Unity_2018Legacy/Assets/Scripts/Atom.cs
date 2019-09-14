@@ -4,91 +4,15 @@ using UnityEngine;
 
 public enum AtomType { A, B, C, D, E, F, G, H };
 
-
-[CreateAssetMenu(menuName = "Atom")]
-
 public class Atom : ScriptableObject
 {
-
     public AtomType atomType;
     public int electrons;
+    public double electronegativity;
 
-    /*
-    public void SetAtomType(string typeString)
+    public AtomType getType()
     {
-        switch (typeString)
-        {
-            case "A":
-                atomType = AtomType.A;
-                electrons = 1;
-                break;
-            case "B":
-                atomType = AtomType.B;
-                electrons = 2;
-                break;
-            case "C":
-                atomType = AtomType.C;
-                electrons = 3;
-                break;
-            case "D":
-                atomType = AtomType.D;
-                electrons = 4;
-                break;
-            case "E":
-                atomType = AtomType.E;
-                electrons = 5;
-                break;
-            case "F":
-                atomType = AtomType.F;
-                electrons = 6;
-                break;
-            case "G":
-                atomType = AtomType.G;
-                electrons = 7;
-                break;
-            case "H":
-                atomType = AtomType.H;
-                electrons = 8;
-                break;
-        }
-    }
-    */
-
-    public void SetAtomType(AtomType type)
-    {
-        atomType = type;
-        SetElectrons();
-    }
-
-    public void SetElectrons()
-    {
-        switch (atomType)
-        {
-            case AtomType.A:
-                electrons = 1;
-                break;
-            case AtomType.B:
-                electrons = 2;
-                break;
-            case AtomType.C:
-                electrons = 3;
-                break;
-            case AtomType.D:
-                electrons = 4;
-                break;
-            case AtomType.E:
-                electrons = 5;
-                break;
-            case AtomType.F:
-                electrons = 6;
-                break;
-            case AtomType.G:
-                electrons = 7;
-                break;
-            case AtomType.H:
-                electrons = 8;
-                break;
-        }
+        return atomType;
     }
 
     public int GetElectrons()
@@ -96,11 +20,10 @@ public class Atom : ScriptableObject
         return electrons;
     }
 
-    public AtomType getType()
+    public double GetElectronegativity()
     {
-        return atomType;
+        return electronegativity;
     }
-
 }
 
 public class AtomA : Atom
@@ -109,6 +32,7 @@ public class AtomA : Atom
     {
         atomType = AtomType.A;
         electrons = 1;
+        electronegativity = 0.98;
     }
 }
 
@@ -118,6 +42,7 @@ public class AtomB : Atom
     {
         atomType = AtomType.B;
         electrons = 2;
+        electronegativity = 1.57;
     }
 }
 
@@ -127,6 +52,7 @@ public class AtomC : Atom
     {
         atomType = AtomType.C;
         electrons = 3;
+        electronegativity = 2.04;
     }
 }
 
@@ -136,6 +62,7 @@ public class AtomD : Atom
     {
         atomType = AtomType.D;
         electrons = 4;
+        electronegativity = 2.55;
     }
 }
 
@@ -145,6 +72,7 @@ public class AtomE : Atom
     {
         atomType = AtomType.E;
         electrons = 5;
+        electronegativity = 3.04;
     }
 }
 
@@ -154,6 +82,7 @@ public class AtomF : Atom
     {
         atomType = AtomType.F;
         electrons = 6;
+        electronegativity = 3.44;
     }
 }
 
@@ -163,6 +92,7 @@ public class AtomG : Atom
     {
         atomType = AtomType.G;
         electrons = 7;
+        electronegativity = 3.98;
     }
 }
 
@@ -172,5 +102,6 @@ public class AtomH : Atom
     {
         atomType = AtomType.H;
         electrons = 8;
+        electronegativity = 0;
     }
 }

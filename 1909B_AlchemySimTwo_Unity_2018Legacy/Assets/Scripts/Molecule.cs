@@ -13,37 +13,41 @@ public class Molecule : ScriptableObject
     private void Awake()
     {
         atomDictionary = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<AtomDictionary>();
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.A), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.B), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.C), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.D), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.E), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.F), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.G), 0);
+        moleculeAtoms.Add(atomDictionary.TypeToClass(AtomType.H), 0);
     }
 
     public void AddAtom(Atom atom)
     {
-        //Debug.Log("MOLECULE: Started AddAtom();");
-        if (moleculeAtoms.ContainsKey(atom))
-        {
-            moleculeAtoms[atom] += 1;
-        }
-        else
-        {
-            moleculeAtoms.Add(atom, 1);
-        }
-        //Debug.Log("MOLECULE: just added " + atom);
+        moleculeAtoms[atom] += 1;
         electrons += moleculeAtoms[atom] * atom.GetElectrons();
-        //Debug.Log(moleculeAtoms);
-        //Debug.Log(electrons);
     }
 
     public void SetName()
     {
         foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
         {
-            chemicalNotation += entry.Value + atomDictionary.TypeToString(entry.Key.getType());
+            if (entry.Value > 0)
+                chemicalNotation += entry.Value + atomDictionary.TypeToString(entry.Key.getType());
         }
-        Debug.Log("MOLECULE: name is " + chemicalNotation);
     }
 
     public string GetName()
     {
         return chemicalNotation;
+    }
+
+    public void SetBondStrength()
+    {
+        // get the average of all the atoms
+        // get the difference between all the atoms
+        // average the differences?
     }
 
 }
