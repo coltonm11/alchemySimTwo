@@ -8,7 +8,7 @@ public class Atom : ScriptableObject
 {
     public AtomType atomType;
     public int electrons;
-    public double electronegativity;
+    public float electronegativity;
 
     public AtomType getType()
     {
@@ -20,7 +20,7 @@ public class Atom : ScriptableObject
         return electrons;
     }
 
-    public double GetElectronegativity()
+    public float GetElectronegativity()
     {
         return electronegativity;
     }
@@ -32,7 +32,7 @@ public class AtomA : Atom
     {
         atomType = AtomType.A;
         electrons = 1;
-        electronegativity = 0.98;
+        electronegativity = 98;
     }
 }
 
@@ -42,7 +42,7 @@ public class AtomB : Atom
     {
         atomType = AtomType.B;
         electrons = 2;
-        electronegativity = 1.57;
+        electronegativity = 157;
     }
 }
 
@@ -52,7 +52,7 @@ public class AtomC : Atom
     {
         atomType = AtomType.C;
         electrons = 3;
-        electronegativity = 2.04;
+        electronegativity = 204;
     }
 }
 
@@ -62,7 +62,7 @@ public class AtomD : Atom
     {
         atomType = AtomType.D;
         electrons = 4;
-        electronegativity = 2.55;
+        electronegativity = 255;
     }
 }
 
@@ -72,7 +72,7 @@ public class AtomE : Atom
     {
         atomType = AtomType.E;
         electrons = 5;
-        electronegativity = 3.04;
+        electronegativity = 304;
     }
 }
 
@@ -82,7 +82,7 @@ public class AtomF : Atom
     {
         atomType = AtomType.F;
         electrons = 6;
-        electronegativity = 3.44;
+        electronegativity = 344;
     }
 }
 
@@ -92,7 +92,7 @@ public class AtomG : Atom
     {
         atomType = AtomType.G;
         electrons = 7;
-        electronegativity = 3.98;
+        electronegativity = 398;
     }
 }
 

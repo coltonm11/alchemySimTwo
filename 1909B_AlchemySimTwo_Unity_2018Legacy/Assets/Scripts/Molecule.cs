@@ -8,6 +8,7 @@ public class Molecule : ScriptableObject
     public int electrons;
     public AtomDictionary atomDictionary;
     public int quantity;
+    public double bondStrength;
     string chemicalNotation;
 
     private void Awake()
@@ -37,7 +38,6 @@ public class Molecule : ScriptableObject
                 chemicalNotation += entry.Value + atomDictionary.TypeToString(entry.Key.getType());
         }
     }
-
     public string GetName()
     {
         return chemicalNotation;
@@ -45,9 +45,47 @@ public class Molecule : ScriptableObject
 
     public void SetBondStrength()
     {
-        // get the average of all the atoms
-        // get the difference between all the atoms
-        // average the differences?
+        float sums = 0;
+        int numberOfAtoms = 0;
+        float differenceSums = 0;
+
+        foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
+        {
+            if (entry.Value > 0)
+            {
+                sums += entry.Key.GetElectronegativity() * entry.Value;
+                numberOfAtoms += entry.Value;
+                Debug.Log("||||||| sums is: " + sums);
+                Debug.Log("||||||| noAtoms is: " + numberOfAtoms);
+            }
+        }
+
+        float average = sums / numberOfAtoms;
+
+        Debug.Log("||||||| average is: " + average);
+
+        foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
+        {
+            if (entry.Value > 0)
+            {
+                for(int i = 0; i < entry.Value; i++)
+                {
+                    differenceSums += Mathf.Abs(entry.Key.GetElectronegativity() - average);
+                    Debug.Log("||||||| diff sums is: " + differenceSums);
+                }
+            }
+                
+
+        }
+
+        float differenceAverage = differenceSums / numberOfAtoms;
+
+        Debug.Log("||||||| diff average is: " + differenceAverage);
+
+        bondStrength = differenceAverage;
+
+        Debug.Log("Bond strenght of " + chemicalNotation + "is: " + bondStrength);
+
     }
 
 }

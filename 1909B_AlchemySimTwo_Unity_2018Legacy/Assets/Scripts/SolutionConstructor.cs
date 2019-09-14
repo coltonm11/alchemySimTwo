@@ -41,6 +41,7 @@ public class SolutionConstructor : MonoBehaviour
         }
 
         newMolecule.SetName();
+        newMolecule.SetBondStrength();
 
         solution.AddMolecule(newMolecule);
         print("SOLUTION CONSTRUCTOR: called solution.AddMolecule(newMolecule)");
