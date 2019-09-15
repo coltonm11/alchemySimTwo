@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Solution : MonoBehaviour
 {
-    MoleculeTable molTable;
+    MoleculeTable moleculicon;
+    public bool reacting;
     public Dictionary<string, int> solutionMolecules = new Dictionary<string, int>();
+
 
     private void Start()
     {
-        molTable = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<MoleculeTable>();
+        reacting = true;
+        moleculicon = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<MoleculeTable>();
     }
 
     public void AddMolecule(Molecule molecule)
@@ -21,10 +24,14 @@ public class Solution : MonoBehaviour
         if (!solutionMolecules.ContainsKey(molecule.name))
         {
             solutionMolecules.Add(molecule.GetName(), 1);
-            molTable.SetMol(molecule.GetName(), molecule);
+            moleculicon.SetMol(molecule.GetName(), molecule);
         }
-        //print(solutionMolecules);
     }
 
-    
+    public void RemoveMolecule(string mol)
+    {
+        solutionMolecules[mol] -= 1;
+        if (solutionMolecules[mol] < 1)
+            solutionMolecules.Remove(mol);
+    }
 }

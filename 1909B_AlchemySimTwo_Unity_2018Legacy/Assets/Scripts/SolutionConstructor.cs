@@ -6,8 +6,9 @@ using UnityEngine;
 public class SolutionConstructor : MonoBehaviour
 {
     public SolutionFormula solutionFormula;
-    Solution solution;
     public AtomDictionary atomDictionary;
+    public ReactionEngine reactionEngine;
+    Solution solution;
 
     private void Start()
     {
@@ -17,20 +18,14 @@ public class SolutionConstructor : MonoBehaviour
 
     private void BuildSolution(AtomType[] atomsToAdd, int[] quantityToAdd)
     {
-        print("SOLUTION CONSTRUCTOR: has started building");
-
-        
         if (atomsToAdd.Length == 0)
         {
             print("atomsToAdd.Length == 0");
             return;
         }
         
-
-
         Molecule newMolecule = ScriptableObject.CreateInstance<Molecule>();
 
-        
         for (int i = 0; i < atomsToAdd.Length; i++)
         {
             for (int x = 0; x < quantityToAdd[i]; x++)
@@ -40,11 +35,9 @@ public class SolutionConstructor : MonoBehaviour
             }
         }
 
-        newMolecule.SetName();
-        newMolecule.SetBondStrength();
+        newMolecule.SetValues();
 
         solution.AddMolecule(newMolecule);
-        print("SOLUTION CONSTRUCTOR: called solution.AddMolecule(newMolecule)");
 
     }
 

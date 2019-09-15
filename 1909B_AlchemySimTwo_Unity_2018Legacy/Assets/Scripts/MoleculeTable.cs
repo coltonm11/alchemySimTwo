@@ -17,13 +17,10 @@ public class MoleculeTable : MonoBehaviour
 
     public void SetMol(string name, Molecule mol)
     {
-        print("MOLECULICON: name is: " + name);
         if (!moleculicon.ContainsKey(name))
         {
             moleculicon.Add(name, mol);
-            print("___MOLECULICON: SetMol: " + moleculicon);
         }
-        print("MOLECULICON: lenght is: " + moleculicon.Count);
         UpdateDebugWindow();
     }
 
@@ -38,7 +35,6 @@ public class MoleculeTable : MonoBehaviour
         foreach (KeyValuePair<string, Molecule> entry in moleculicon)
         {
             windowText.text += entry.Value.GetName() + "\n";
-            print("___MOLECULICON: " + entry.Value.GetName());
         }
     }
 }

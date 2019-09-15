@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Labratory.cs" />
+    <Compile Include="Assets\ReactionEngine.cs" />
     <Compile Include="Assets\Scripts\Atom.cs" />
     <Compile Include="Assets\Scripts\AtomDictionary.cs" />
     <Compile Include="Assets\Scripts\InventoryCard.cs" />
