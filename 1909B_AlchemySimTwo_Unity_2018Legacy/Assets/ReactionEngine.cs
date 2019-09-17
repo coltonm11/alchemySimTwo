@@ -53,7 +53,7 @@ public class ReactionEngine : MonoBehaviour
             }
 
         }
-        print(molecule);
+        print("fewest eletron subject is: " + molecule);
         return molecule;
     }
 
@@ -97,15 +97,29 @@ public class ReactionEngine : MonoBehaviour
         Molecule sendingMol = moleculicon.GetMol(adam);
         Molecule recievingMol = moleculicon.GetMol(eve);
 
+        //bug fix for dupes
+        if (adam == eve)
+        {
+            recievingMol = new Molecule();
+            Molecule recievingMolBluePrint = moleculicon.GetMol(eve);
+
+            foreach (KeyValuePair<Atom, int> entry in recievingMolBluePrint.moleculeAtoms)
+            {
+                recievingMol.moleculeAtoms[entry.Key] += entry.Value;
+            }
+        }
 
         foreach (KeyValuePair<Atom, int> entry in sendingMol.moleculeAtoms)
         {
+            print("Bonding: Foreach is going");
             int i = entry.Value;
             recievingMol.moleculeAtoms[entry.Key] += i;
         }
-
+        print("bonding: FE finished");
         recievingMol.SetValues();
+        print("set values");
         moleculicon.SetMol(recievingMol.GetName(), recievingMol);
+        print("setMol");
 
         return recievingMol;
     }
