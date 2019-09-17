@@ -8,6 +8,7 @@ public class Molecule : ScriptableObject
     public int electrons;
     public AtomDictionary atomDictionary;
     public int quantity;
+    public float electronegativity;
     public float bondStrength;
     string chemicalNotation;
 
@@ -63,6 +64,7 @@ public class Molecule : ScriptableObject
         }
 
         float average = sums / numberOfAtoms;
+        electronegativity = average;
 
 
         foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
@@ -93,6 +95,11 @@ public class Molecule : ScriptableObject
     public int GetElectrons()
     {
         return electrons;
+    }
+
+    public float GetElectronegativity()
+    {
+        return electronegativity;
     }
 
     public float GetBondStrength()

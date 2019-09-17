@@ -12,6 +12,7 @@ public class Labratory : MonoBehaviour
     public TextMeshProUGUI textNotation;
     public TextMeshProUGUI textAmount;
     public TextMeshProUGUI textElectrons;
+    public TextMeshProUGUI textEL;
     public TextMeshProUGUI textBond;
 
     private void Start()
@@ -50,6 +51,7 @@ public class Labratory : MonoBehaviour
         textNotation.text = "";
         textAmount.text = "";
         textElectrons.text = "";
+        textEL.text = "";
         textBond.text = "";
 
         foreach (KeyValuePair<string, int> entry in sol.solutionMolecules)
@@ -58,6 +60,7 @@ public class Labratory : MonoBehaviour
             textNotation.text += mol.GetName() + "\n";
             textAmount.text += entry.Value + "\n";
             textElectrons.text += mol.GetElectrons() + "\n";
+            textEL.text += mol.GetElectronegativity() + "\n";
             textBond.text += mol.GetBondStrength() + "\n";
         }
     }
