@@ -37,4 +37,17 @@ public class MoleculeTable : MonoBehaviour
             windowText.text += entry.Value.GetName() + "\n";
         }
     }
+
+    public Molecule NewMoleculeOfType(string name)
+    {
+        Molecule mol = ScriptableObject.CreateInstance<Molecule>();
+        Molecule blueprint = GetMol(name);
+
+        foreach (KeyValuePair<Atom, int> entry in blueprint.moleculeAtoms)
+        {
+            mol.moleculeAtoms[entry.Key] += entry.Value;
+        }
+
+        return mol;
+    }
 }

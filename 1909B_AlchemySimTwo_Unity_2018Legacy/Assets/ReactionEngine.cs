@@ -21,12 +21,13 @@ public class ReactionEngine : MonoBehaviour
 
         if (secondMol == "null")
         {
+            sol.AddMolecule(moleculicon.GetMol(firstMol));
             sol.reacting = false;
             return sol;
         }
 
-        sol.RemoveMolecule(firstMol);
-        sol.RemoveMolecule(secondMol);
+        //sol.RemoveMolecule(firstMol);
+        //sol.RemoveMolecule(secondMol);
 
         Molecule newMolecule = Bond(firstMol, secondMol);
         sol.AddMolecule(newMolecule);
@@ -54,6 +55,7 @@ public class ReactionEngine : MonoBehaviour
 
         }
         print("fewest eletron subject is: " + molecule);
+        sol.RemoveMolecule(molecule);
         return molecule;
     }
 
@@ -62,12 +64,18 @@ public class ReactionEngine : MonoBehaviour
         int firstElectrons = moleculicon.GetMol(firstMol).GetElectrons();
         int secondElectrons = 0;
         string molecule = "null";
-        bool hasMultiples = false;
+        //bool hasMultiples = false;
 
         foreach (KeyValuePair<string, int> entry in sol.solutionMolecules)
         {
             int theseElectrons = moleculicon.GetMol(entry.Key).GetElectrons();
 
+            if (theseElectrons > secondElectrons && firstElectrons + theseElectrons < 9)
+            {
+                molecule = entry.Key;
+            }
+
+            /*
             if (sol.solutionMolecules[firstMol] > 1)
                 hasMultiples = true;
 
@@ -87,39 +95,29 @@ public class ReactionEngine : MonoBehaviour
                     }
                     break;
             }
+            */
         }
 
+        sol.RemoveMolecule(molecule);
         return molecule;
     }
 
     Molecule Bond(string adam, string eve)
     {
-        Molecule sendingMol = moleculicon.GetMol(adam);
-        Molecule recievingMol = moleculicon.GetMol(eve);
-
-        //bug fix for dupes
-        if (adam == eve)
-        {
-            recievingMol = new Molecule();
-            Molecule recievingMolBluePrint = moleculicon.GetMol(eve);
-
-            foreach (KeyValuePair<Atom, int> entry in recievingMolBluePrint.moleculeAtoms)
-            {
-                recievingMol.moleculeAtoms[entry.Key] += entry.Value;
-            }
-        }
+        Molecule sendingMol = moleculicon.NewMoleculeOfType(adam);
+        Molecule recievingMol = moleculicon.NewMoleculeOfType(eve);
 
         foreach (KeyValuePair<Atom, int> entry in sendingMol.moleculeAtoms)
         {
-            print("Bonding: Foreach is going");
-            int i = entry.Value;
-            recievingMol.moleculeAtoms[entry.Key] += i;
+            //print("Bonding: Foreach is going");
+            //int i = entry.Value;
+            recievingMol.moleculeAtoms[entry.Key] += entry.Value;
         }
-        print("bonding: FE finished");
+        //print("bonding: FE finished");
         recievingMol.SetValues();
-        print("set values");
+        //print("set values");
         moleculicon.SetMol(recievingMol.GetName(), recievingMol);
-        print("setMol");
+        //print("setMol");
 
         return recievingMol;
     }

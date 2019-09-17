@@ -17,11 +17,11 @@ public class Solution : MonoBehaviour
 
     public void AddMolecule(Molecule molecule)
     {
-        if (solutionMolecules.ContainsKey(molecule.name))
+        if (solutionMolecules.ContainsKey(molecule.GetName()))
         {
-            solutionMolecules[molecule.name] += 1;
+            solutionMolecules[molecule.GetName()] += 1;
         }
-        if (!solutionMolecules.ContainsKey(molecule.name))
+        if (!solutionMolecules.ContainsKey(molecule.GetName()))
         {
             solutionMolecules.Add(molecule.GetName(), 1);
             moleculicon.SetMol(molecule.GetName(), molecule);
@@ -30,6 +30,9 @@ public class Solution : MonoBehaviour
 
     public void RemoveMolecule(string mol)
     {
+        if (!solutionMolecules.ContainsKey(mol))
+            return;
+
         solutionMolecules[mol] -= 1;
         if (solutionMolecules[mol] < 1)
             solutionMolecules.Remove(mol);
