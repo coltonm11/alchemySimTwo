@@ -9,6 +9,7 @@ public class Atom : ScriptableObject
     public AtomType atomType;
     public int electrons;
     public float electronegativity;
+    public float mass;
 
     public AtomType getType()
     {
@@ -24,6 +25,11 @@ public class Atom : ScriptableObject
     {
         return electronegativity;
     }
+
+    public float GetMass()
+    {
+        return mass;
+    }
 }
 
 public class AtomA : Atom
@@ -33,6 +39,7 @@ public class AtomA : Atom
         atomType = AtomType.A;
         electrons = 1;
         electronegativity = 98;
+        mass = 6.93f; //Lithium
     }
 }
 
@@ -43,6 +50,7 @@ public class AtomB : Atom
         atomType = AtomType.B;
         electrons = 2;
         electronegativity = 157;
+        mass = 9.01f; //Beryllium
     }
 }
 
@@ -53,6 +61,7 @@ public class AtomC : Atom
         atomType = AtomType.C;
         electrons = 3;
         electronegativity = 204;
+        mass = 10.8f; //Boron
     }
 }
 
@@ -63,6 +72,7 @@ public class AtomD : Atom
         atomType = AtomType.D;
         electrons = 4;
         electronegativity = 255;
+        mass = 12; //Carbon
     }
 }
 
@@ -73,6 +83,7 @@ public class AtomE : Atom
         atomType = AtomType.E;
         electrons = 5;
         electronegativity = 304;
+        mass = 14;
     }
 }
 
@@ -83,6 +94,7 @@ public class AtomF : Atom
         atomType = AtomType.F;
         electrons = 6;
         electronegativity = 344;
+        mass = 15.99f;
     }
 }
 
@@ -93,6 +105,7 @@ public class AtomG : Atom
         atomType = AtomType.G;
         electrons = 7;
         electronegativity = 398;
+        mass = 18.99f;
     }
 }
 
@@ -103,5 +116,6 @@ public class AtomH : Atom
         atomType = AtomType.H;
         electrons = 8;
         electronegativity = 0;
+        mass = 20.18f;
     }
 }
