@@ -10,6 +10,7 @@ public class Molecule : ScriptableObject
     public int quantity;
     public float electronegativity;
     public float bondStrength;
+    public float density;
     string chemicalNotation;
 
     private void Awake()
@@ -46,6 +47,7 @@ public class Molecule : ScriptableObject
             }
         }
         SetBondStrength();
+        SetDensity();
     }
 
     void SetBondStrength()
@@ -66,7 +68,6 @@ public class Molecule : ScriptableObject
         float average = sums / numberOfAtoms;
         electronegativity = average;
 
-
         foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
         {
             if (entry.Value > 0)
@@ -76,16 +77,34 @@ public class Molecule : ScriptableObject
                     differenceSums += Mathf.Abs(entry.Key.GetElectronegativity() - average);
                 }
             }
-
-
         }
 
         float differenceAverage = differenceSums / numberOfAtoms;
 
-
         bondStrength = differenceAverage;
-
     }
+
+    void SetDensity()
+    {
+        float totalMass = 0;
+
+        foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
+        {
+            if (entry.Value > 0)
+            {
+                for (int i = 0; i < entry.Value; i++)
+                {
+                    totalMass += entry.Key.GetMass();
+                }
+            }
+        }
+
+        density = totalMass / electrons;
+    }
+
+    // ----------------------------------
+    // ------ GET VALUES ----------------
+    // ----------------------------------
 
     public string GetName()
     {
@@ -107,6 +126,9 @@ public class Molecule : ScriptableObject
         return bondStrength;
     }
 
-
+    public float GetDensity()
+    {
+        return density;
+    }
 
 }
