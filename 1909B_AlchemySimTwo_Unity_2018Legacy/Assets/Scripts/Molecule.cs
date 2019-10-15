@@ -13,6 +13,8 @@ public class Molecule : ScriptableObject
     public float density;
     public bool polarity;
     string chemicalNotation;
+    public enum State { solid, liquid, gas};
+    public State state;
 
     private void Awake()
     {
@@ -50,6 +52,7 @@ public class Molecule : ScriptableObject
         SetBondStrength();
         SetDensity();
         SetPolarity();
+        SetState();
     }
 
     void SetBondStrength()
@@ -128,6 +131,18 @@ public class Molecule : ScriptableObject
         }
     }
 
+    void SetState()
+    {
+        state = State.gas;
+
+        if (density > 3)
+            state = State.liquid;
+
+        if (density > 4)
+            state = State.solid;
+
+    }
+
     // ----------------------------------
     // ------ GET VALUES ----------------
     // ----------------------------------
@@ -160,5 +175,10 @@ public class Molecule : ScriptableObject
     public bool GetPolarity()
     {
         return polarity;
+    }
+
+    public State GetState()
+    {
+        return state;
     }
 }
