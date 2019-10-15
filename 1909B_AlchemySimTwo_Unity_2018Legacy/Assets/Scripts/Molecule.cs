@@ -11,6 +11,7 @@ public class Molecule : ScriptableObject
     public float electronegativity;
     public float bondStrength;
     public float density;
+    public bool polarity;
     string chemicalNotation;
 
     private void Awake()
@@ -48,6 +49,7 @@ public class Molecule : ScriptableObject
         }
         SetBondStrength();
         SetDensity();
+        SetPolarity();
     }
 
     void SetBondStrength()
@@ -102,6 +104,30 @@ public class Molecule : ScriptableObject
         density = totalMass / electrons;
     }
 
+    void SetPolarity()
+    {
+
+        float highestValue = 0;
+        float lowestValue = 999999;
+
+        foreach (KeyValuePair<Atom, int> entry in moleculeAtoms)
+        {
+            if (entry.Value > 0)
+            {
+                if (entry.Key.GetElectronegativity() > highestValue)
+                    highestValue = entry.Key.GetElectronegativity();
+
+                if (entry.Key.GetElectronegativity() < lowestValue)
+                    lowestValue = entry.Key.GetElectronegativity();
+            }
+        }
+
+        if (highestValue - lowestValue > 100)
+        {
+            polarity = true;
+        }
+    }
+
     // ----------------------------------
     // ------ GET VALUES ----------------
     // ----------------------------------
@@ -131,4 +157,8 @@ public class Molecule : ScriptableObject
         return density;
     }
 
+    public bool GetPolarity()
+    {
+        return polarity;
+    }
 }

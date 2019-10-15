@@ -15,6 +15,7 @@ public class Labratory : MonoBehaviour
     public TextMeshProUGUI textEL;
     public TextMeshProUGUI textBond;
     public TextMeshProUGUI textDensity;
+    public TextMeshProUGUI textPolarity;
 
     private void Start()
     {
@@ -55,6 +56,7 @@ public class Labratory : MonoBehaviour
         textEL.text = "";
         textBond.text = "";
         textDensity.text = "";
+        textPolarity.text = "";
 
         foreach (KeyValuePair<string, int> entry in sol.solutionMolecules)
         {
@@ -65,6 +67,7 @@ public class Labratory : MonoBehaviour
             textEL.text += mol.GetElectronegativity() + "\n";
             textBond.text += mol.GetBondStrength() + "\n";
             textDensity.text += mol.GetDensity() + "\n";
+            textPolarity.text += mol.GetPolarity() + "\n";
         }
     }
 }

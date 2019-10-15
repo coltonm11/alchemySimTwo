@@ -38,7 +38,7 @@ public class AtomA : Atom
     {
         atomType = AtomType.A;
         electrons = 1;
-        electronegativity = 98;
+        electronegativity = 98; //Of what?
         mass = 6.93f; //Lithium
     }
 }
