@@ -39,6 +39,19 @@ public class ReactionEngine : MonoBehaviour
         return sol;
     }
 
+    public Solution Heat(Solution sol)
+    {
+        // make new list in order
+
+        // check lowest one
+
+        // return of none compatable, end the heating loop
+
+        // send it to coroutine if compatable. Run heat again when finsihed.
+
+        return sol;
+    }
+
     string FindFewestElectrons(Solution sol)
     {
         int electrons = 9;

@@ -64,6 +64,7 @@
     <Compile Include="Assets\ReactionEngine.cs" />
     <Compile Include="Assets\Scripts\Atom.cs" />
     <Compile Include="Assets\Scripts\AtomDictionary.cs" />
+    <Compile Include="Assets\Scripts\Container.cs" />
     <Compile Include="Assets\Scripts\InventoryCard.cs" />
     <Compile Include="Assets\Scripts\Molecule.cs" />
     <Compile Include="Assets\Scripts\MoleculeTable.cs" />
